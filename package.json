@@ -2,7 +2,7 @@
   "name": "router-permission",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "jyf <jinyufan@vip56.cn>",
+  "author": "jyf",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -10,7 +10,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "ali-oss": "4.11.4",
     "axios": "^0.18.0",
     "element-ui": "^2.4.6",
     "vue": "^2.5.2",
