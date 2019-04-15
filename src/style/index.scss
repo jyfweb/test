@@ -1,0 +1,173 @@
+/* elementUI样式修改 */
+@import './element-ui-edit.scss';
+/* elementUI主题样式 */
+@import './element-theme.scss';
+
+
+/* 全局样式 */
+html {
+    height:100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 12px;
+    color:#333;
+ }
+
+ body {
+     height:100%;
+     font-family: "PingFangSC-Medium","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    //  font-size: 14px;
+     -webkit-font-smoothing: antialiased;
+     color:#333 !important;
+     overflow-x: hidden;
+     margin:0;
+     padding:0;
+
+ }
+
+ .h1,
+ .h2,
+ .h3,
+ .h4,
+ .h5,
+ .h6 {
+     margin: 0;
+ }
+
+ input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+ /* 操作按钮位置 */
+ .btnPostion{
+    margin:20px;
+ }
+
+ /*富文本编辑器高度*/
+ .ql-editor {
+    height: 200px!important;
+}
+
+div{
+    font: none;
+}
+
+.font-size-12px{
+    font-size: 10px;
+}
+
+.font-size-14px{
+    font-size: 12px;
+}
+.font-size-16px{
+    font-size: 14px;
+}
+.font-size-18px{
+    font-size: 14px;
+}
+
+.font-size-20px{
+    font-size: 18px;
+}
+
+.font-size-22px{
+    font-size: 20px;
+}
+
+.font-size-26px{
+    font-size: 24px;
+    color: #333;
+    font-family: 'PingFangSC-Medium'
+}
+
+.font-size-30px{
+    font-size: 28px;
+}
+
+.required::after{
+    content: '*';
+    color: red
+}
+
+*:focus {outline: none;}
+textarea{ 
+    resize:none ;
+    padding: 6px 13px;
+    color: #606266;
+    font-size: 13px;
+    font-family: 'PingfangSC-Regular';
+    } 
+
+    textarea::-webkit-input-placeholder {
+        color: #c6cad0 !important;
+        font-size: 13px;
+        font-family: 'PingFangSC-Regular'
+     }
+
+.el-icon-plus{
+    font-weight: bold!important;
+}     
+
+
+
+  
+
+   
+
+ .el-tooltip__popper{
+        max-width: 200px !important;
+      }
+      .el-main{
+          padding:15px;
+      }
+   
+      .el-radio{
+          font-family: 'PingFangSC-Regular';
+          font-size: 18px;
+      }
+      .btn{
+        min-width: 100px;
+        font-size: 16px!important;
+      }
+      
+      .dismiss {
+        background: #dcdfe6;
+        color: #333;
+        border-color:#dcdfe6;
+      }
+
+      .dismiss:hover{
+        border-color:#dcdfe6;
+        background: #dcdfe6;
+        color: #333;
+      }
+
+      .add {
+        background: #3581f7;
+        color: #fff;
+        border-color: #3581f7;
+        margin-left: 40px!important;
+      }
+      
+      .confirm{
+        color: #fff;
+        margin-left: 40px!important;
+        background: #EB595A;
+        font-size: 14px!important
+      }
+      .el-button--primary{
+        background-color: #3581F7;
+        border-color: #3581F7;
+      
+      }
+    
+.back{
+    margin-left: 20px;
+    // min-width: 140px;
+}      
+.pswp--open{
+    z-index: 999999;
+  }
