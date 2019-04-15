@@ -23,7 +23,6 @@ import stores from '../../../vuex/index';
 })
 export default class SideBar extends Vue {
   public collapsed: boolean = false;
-  public sysName: string = "TMS-saas";
   public asyncRouterMap = asyncRouterMap;
   public $refs: {
     menuCollapsed: HTMLFormElement;
