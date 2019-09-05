@@ -6,12 +6,7 @@
  -->
 <template>
     <div>
-    <div v-for="(item,key) in list" :key="key">
-      {{item}}
-    </div>
-    <button @click="changeList">失效</button>
-    <button @click="respondList">响应</button>
-    {{list}}
+
   </div>
 
 </template>
@@ -30,23 +25,6 @@ interface listResponse{
 }
 @Component({})
 export default class Manager extends Vue {
- 
- public list:any= [11, 12, { money: 17 }]
-
-  async created () {
-
-
-  }
-  changeList () {
-      // 失效代码
-      this.list[0] = 16
-      this.list.length = 0
-    }
-    respondList () {
-      // 生效代码
-      this.list[2].money = 0
-      this.list[0] = 16
-    }
 
 }
 </script>
