@@ -50,9 +50,9 @@ let that = this;
         var $ = layui.jquery;
         var socket = layui.socket;
         socket.config({
-            key: '82hegw5uhqtcx', //融云key
+            key: '', //融云key
             layim: null,
-            token: 'pY47tkCUpKcqWCRhrSqzSE+8anvb7GHabts1atHWodjqMxX2TBLTTwUobhA9ZsfbIJ84oh70h2nDpc4Br+k7DDCkTK6Dc1ZF',//融云用户token
+            token: '',//融云用户token
         });
   
           //  socket.RongYunMessage(res=>{
