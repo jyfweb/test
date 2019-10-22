@@ -44,7 +44,6 @@ export const asyncRouterMap = [
     component: Home,
     leaf: true,
     meta: {
-      permissions: ['p_1']
     },
     children: [
       {
@@ -53,7 +52,6 @@ export const asyncRouterMap = [
         name: 'OpenApi',
         meta: {
           title: "OpenApi",
-          permissions: ['p_1_1']
         }
       }
     ]
@@ -64,7 +62,6 @@ export const asyncRouterMap = [
     component: Home,
     leaf: false,
     meta: {
-      permissions: ['p_2']
     },
     children: [
       {
@@ -73,7 +70,6 @@ export const asyncRouterMap = [
         name: 'LogisticsManager',
         meta: {
           title: "LogisticsManager",
-          permissions: ['p_2_1']
         }
       },
       {
@@ -82,7 +78,6 @@ export const asyncRouterMap = [
         name: 'LogisticsManager2',
         meta: {
           title: "LogisticsManager2",
-          permissions: ['p_2_2']
         }
       }
     ]
@@ -93,7 +88,6 @@ export const asyncRouterMap = [
     component: Home,
     leaf: true,
     meta: {
-      permissions: ['p_3']
     },
     children: [
       {
@@ -102,7 +96,6 @@ export const asyncRouterMap = [
         name: '用户管理',
         meta: {
           title: "用户管理",
-          permissions: ['p_3_1']
         }
       }
     ]
@@ -124,7 +117,6 @@ export const asyncRouterMap = [
         name: 'NoPermission',
         meta: {
           title: "NoPermission",
-          permissions: ['p_page']
         }
       }
     ]
@@ -139,31 +131,42 @@ router.beforeEach((to, from, next) => {
 
   let jwtToken = sessionStorage.getItem('jwtToken');
   stores.state.jwtToken = jwtToken;
+
+
+    // NProgress.start();
+  // //判断是否需要登录权限 以及是否登录
   if (!stores.state.jwtToken && to.path !== '/login') {// 判断是否登录
     next({
       path: '/login',
     });
   } else {
-    stores.dispatch('getPermissionList');
-
-    const { permissions } = to.meta;
-    if (permissions) {
-      // 判断的权限列表
-      const hasPermission = user_permissions.includePermission(permissions)
-      console.log(hasPermission);
-
-      if (!hasPermission) {
-        next({
-          path: '/NoPermission/page',
-        });
-        return;
-      }else{
-        next()
-      }
-    }
-    
     next()
   }
+  // if (!stores.state.jwtToken && to.path !== '/login') {// 判断是否登录
+  //   next({
+  //     path: '/login',
+  //   });
+  // } else {
+  //   stores.dispatch('getPermissionList');
+
+  //   const { permissions } = to.meta;
+  //   if (permissions) {
+  //     // 判断的权限列表
+  //     const hasPermission = user_permissions.includePermission(permissions)
+  //     console.log(hasPermission);
+
+  //     if (!hasPermission) {
+  //       next({
+  //         path: '/NoPermission/page',
+  //       });
+  //       return;
+  //     }else{
+  //       next()
+  //     }
+  //   }
+    
+  //   next()
+  // }
 
 })
 export default router

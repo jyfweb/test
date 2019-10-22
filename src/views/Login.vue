@@ -18,17 +18,17 @@ export default class Login extends Vue {
 
 async Login() {
      await stores.dispatch('LoginDataList');
-    
-     let list:any = stores.state.list;
+     this.$router.push('OpenApi/OpenApiManager')
+    //  let list:any = stores.state.list;
       
-    for (var i = 0; i < asyncRouterMap.length; i++) {
-      if (
-       list.includes(asyncRouterMap[i].children[0].meta.permissions[0])
-      ) {
-        this.$router.push(asyncRouterMap[i].children[0].path);
-        break;
-      }
-    }
+    // for (var i = 0; i < asyncRouterMap.length; i++) {
+    //   if (
+    //    list.includes(asyncRouterMap[i].children[0].meta.permissions[0])
+    //   ) {
+    //     this.$router.push(asyncRouterMap[i].children[0].path);
+    //     break;
+    //   }
+    // }
   }
 }
 </script>

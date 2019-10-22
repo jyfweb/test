@@ -2,10 +2,10 @@
   <div class="menu-expanded">
    <el-menu :default-active="$route.path" class="el-menu-vertical-demo" unique-opened router @open="handleOpen" @close="handleClose" background-color="#222A3D" text-color="#C0C4CC"
         :collapse="collapsed" active-text-color="#fff">
-        <template v-for="(item,index) in asyncRouterMap" v-if="!item.hidden&&IsPermission(item.meta.permissions[0])">
+        <template v-for="(item,index) in asyncRouterMap">
             <el-submenu :index="index+''" v-if="!item.leaf" :key="item.name">
                 <template slot="title"><span :class="item.icon"></span><span slot="title">{{item.name}}</span></template>
-                <el-menu-item v-for="child in item.children" :index="child.path" :key="child.path" v-if="!child.hidden&&IsPermission(child.meta.permissions[0])">{{ child.name }}</el-menu-item>
+                <el-menu-item v-for="child in item.children" :index="child.path" :key="child.path" >{{ child.name }}</el-menu-item>
             </el-submenu>
             <el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"  :key="item.name"><span slot="title">{{ item.children[0].name }}</span></el-menu-item>
         </template>
